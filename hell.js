@@ -1,32 +1,7 @@
-var size = 0;
-function expandDivOnLoad(id)
-{
-    var elem = document.getElementById(id);
-    elem.style.height= 0 + '%';
-    //var size = 0;
-    var expand_rate = 2;
-    var animation=setInterval(frame, 100);
-    function frame()
-    {
-        elem.style.maxHeight= 0;
-        //elem.style.overflow= 'hidden';
-        if(size==100){
-            clearInterval(size);
-            //elem.style.maxHeight= '1000px';
-            elem.style.overflow= 'visible';
-        }
-        else{
-            size = size + expand_rate;
-            elem.style.width =  size + '%';
-        }
-    }
-}
 
-
-function helloWorld(){
-    alert('Hello world');
-}
-
+/*
+    these functions generate the animation on start
+*/
 function isWs(c){
     var is_whitespace = /\s/;
     return is_whitespace.test(c);
@@ -64,7 +39,7 @@ function jumbleArray(bin_arr, final_arr, final_threshold){
     return bin_arr;
 }
 
-function hackerAnimation(id)
+function binaryFlipAnimation(id)
 {
     var elem = document.getElementById(id);
     var final_str = elem.innerHTML;
@@ -76,7 +51,6 @@ function hackerAnimation(id)
     var final_threshold = 0;
     var animate = setInterval(animateBinary, 150);
     function animateBinary(){
-        
         if(num_times == 20){
             elem.innerHTML = final_str;
         }
