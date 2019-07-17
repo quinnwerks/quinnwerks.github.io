@@ -1,120 +1,198 @@
 :root
 {
-    --base00  :#657b83;
-    --base01  :#586e75;
-    --base02  :#073642;
-    --base03  :#002b36;
-    --base0   :#839496;
-    --base1   :#93a1a1;
-    --base2   :#eee8d5;
-    --base3   :#fdf6e3;
-    --yellow  :#b58900;
-    --orange  :#cb4b16;
-    --red     :#d30102;
-    --magenta :#d33682;
-    --violet  :#6c71c4;
-    --blue    :#268bd2;
-    --cyan    :#2aa198;
-    --green   :#859900;
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
 }
 
 html
 {
     background: var(--base03);
     font-family: "IBM Plex Mono", monospace;
-    font-size: 15px;
+    font-size: 14px;
     color: var(--base0);
-    line-height: 1.5rem;
-    
+    line-height: 1.6;
 }
 
-.yellow {color: var(--yellow);}
-.orange {color: var(--orange);}
-.red {color: var(--red);}
-.magenta {color: var(--magenta);}
-.violet {color: var(--violet);}
-.blue {color: var(--blue);}
-.cyan {color: var(--cyan);}
-.green {color: var(--green);}
+.yellow  { color: var(--yellow);  }
+.orange  { color: var(--orange);  }
+.red     { color: var(--red);     }
+.magenta { color: var(--magenta); }
+.violet  { color: var(--violet);  }
+.blue    { color: var(--blue);    }
+.cyan    { color: var(--cyan);    }
+.green   { color: var(--green);   }
 
-div.grid
+::selection 
 {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr;
-    grid-gap: 2rem;
-    max-width: 1400px;
-    margin: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-section.sector
+body
 {
-    background: var(--base02);
-    padding:1rem;
-    counter-reset: line;
-    position: relative;
-
-}
-
-#bio
-{
-    background: var(--base03);
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-
-#ed
-{
-    grid-column-start: 2;
-    grid-column-end: 4;
-}
-
-#wrk
-{
-    grid-column-start:1;
-    grid-column-end:3;
-   
-}
-
-#proj
-{
-    grid-column-start: 3;
-    grid-column-end: 4;
-}
-
-#pass
-{
-    grid-column-start: 1;
-    grid-column-end: 4;
-}
-
-section.sector ul
-{
-    margin:0;
-}
-
-
-li
-{
-    list-style-type: none;
+    margin: 20px;
 }
 
 h1, h2, h3, h4
 {
     font-size: 1rem;
-    font-weight:normal;
-    margin: 0;
-} 
+    color: var(--base1);
+}
+
+h1.yellow
+{
+    animation: fade-in 0.4s ease;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+header
+{
+    padding: 200px 0px 100px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header p
+{
+    max-width: 560px;
+    color: var(--base01);
+}
+
+header p .done
+{
+    color: var(--base1);
+}
+
+#grid
+{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+#edu
+{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    animation-delay: 2s;
+}
+
+#work
+{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    animation-delay: 2.2s;
+}
+
+#proj
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    animation-delay: 2.5s;
+}
+
+#pass
+{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    animation-delay: 2.8s;
+}
+
+section
+{
+    background: var(--base02);
+    padding: 10px 30px;
+    padding-left: 1rem;
+    border-radius: 4px;
+    counter-reset: line;
+    position: relative;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    
+    animation-name: float;
+    opacity: 0;
+}
+
+section li:before
+{
+    counter-increment: line;
+    content: counter(line);
+    display: block;
+    position: absolute;
+    left: 0;
+    opacity: 0.3;
+    margin-left: 1rem;
+}
+
+ul
+{
+    list-style: none;
+}
+
+@keyframes float
+{
+    from
+    {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    to
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade-in
+{
+    0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
 
 @media screen and (max-width: 800px)
 {
-    div.grid
+    header
+    {
+        padding: 80px 0px;
+    }
+    
+    #grid
     {
         grid-template-columns: 1fr;
+        grid-column-gap: 0;
+        padding-bottom: 80px;
     }
-
-    #bio, #ed, #wrk, #proj, #pass
+    
+    #edu, #work, #proj, #pass
     {
-        grid-column-start:1;
-        grid-column-end:2;
+        grid-column-start: 1;
+        grid-column-end: 2;
     }
 }
