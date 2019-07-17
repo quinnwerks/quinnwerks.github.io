@@ -53,8 +53,10 @@ h1, h2, h3, h4
 
 h1.yellow
 {
+    -webkit-animation: fade-in 0.4s ease;
     animation: fade-in 0.4s ease;
     opacity: 0;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
 
@@ -100,6 +102,7 @@ header p .done
 {
     grid-column-start: 1;
     grid-column-end: 2;
+    -webkit-animation-delay: 2s;	
     animation-delay: 2s;
 }
 
@@ -107,6 +110,7 @@ header p .done
 {
     grid-column-start: 2;
     grid-column-end: 4;
+    -webkit-animation-delay: 2.2s;
     animation-delay: 2.2s;
 }
 
@@ -114,6 +118,7 @@ header p .done
 {
     grid-column-start: 1;
     grid-column-end: 3;
+    -webkit-animation-delay: 2.5s;
     animation-delay: 2.5s;
 }
 
@@ -121,6 +126,7 @@ header p .done
 {
     grid-column-start: 3;
     grid-column-end: 4;
+    -webkit-animation-delay: 2.8s;
     animation-delay: 2.8s;
 }
 
@@ -132,6 +138,8 @@ section
     border-radius: 4px;
     counter-reset: line;
     position: relative;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-duration: 1s;
     
@@ -157,17 +165,47 @@ ul
     list-style: none;
 }
 
-@keyframes float
+@-webkit-keyframes float
 {
     from
     {
         opacity: 0;
+        -webkit-transform: translateY(100px);
+	-ms-transform: translateY(100px);
         transform: translateY(100px);
     }
     
     to
     {
         opacity: 1;
+        -webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes fade-in
+{
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+@keyframes float
+{
+    from
+    {
+        opacity: 0;
+        -webkit-transform: translateY(100px);
+	-ms-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    
+    to
+    {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+	-ms-transform: translateY(0px);
         transform: translateY(0px);
     }
 }
@@ -175,7 +213,7 @@ ul
 @keyframes fade-in
 {
     0%   { opacity: 0; }
-	100% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 @media screen and (max-width: 800px)
