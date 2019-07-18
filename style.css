@@ -147,7 +147,6 @@ section
     opacity: 0;
 }
 
-/* UNCOMMENT FOR LINE NUMBERS
 section li:before
 {
     counter-increment: line;
@@ -158,7 +157,6 @@ section li:before
     opacity: 0.3;
     margin-left: 1rem;
 }
-*/
 
 ul
 {
