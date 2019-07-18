@@ -14,12 +14,9 @@
                 <meta http-equiv='X-UA-Compatible' 
                       content='IE=edge'>
                 <title>Quinn Smith</title>
-                <!--External Includes -->
                 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" 
-                      rel="stylesheet"> 
-                <!--Internal File linking-->
+                      rel="stylesheet">
                 <link rel="stylesheet" type="text/css" href="style.css">
-                <script src="hell.js"></script>
                 <noscript>
                     <style>
                         section
@@ -34,11 +31,7 @@
         <body>
                 <header>
                     <h1 class="yellow" id="name">Quinn Smith</h1>
-                    <p id="bio">
-                        Remain valley who mrs uneasy remove wooded 
-                        him you. Her questions favourite him concealed. 
-                        We to wife face took he.
-                   </p>
+                    <p id="bio">I'm a software engineer, currently enrolled UofT. I love playing ultimate frisbee and rock climbing. </p>
                 </header>
                 
                 <div id="grid">
@@ -114,6 +107,78 @@
         
         <!-- call animations -->
         <script>
+            function sleep(ms) 
+            {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            async function animateName()
+            {
+                var name = document.getElementById("name");
+                var finalName = name.innerHTML;
+                name.innerHTML = "_";
+                await sleep(100);
+
+                for(var k = 0; k < finalName.length; k++)
+                {
+                    await sleep(10 + (Math.pow(k, 2)/2));
+                    name.innerHTML = finalName.slice(0, k) + "_";
+                }
+
+                await sleep(10+(Math.pow(finalName.length,2)/2));
+                name.innerHTML = finalName;
+            }
+
+            async function animateBio()
+            {
+                var char = "1234567890-=!@#$%&*()[]{}\|qwertyuiopasdfghjklzxcvbnm>?QWERTYUIOPLKJHGFDSAZXCVBNM".split("");
+                var bio = document.getElementById("bio");
+                var finalTxt = bio.innerHTML.split("");
+                var txt = [" "]
+                bio.innerHTML = txt;
+
+                var half = Math.floor(finalTxt.length / 3);
+                await sleep(500);
+
+                for(var i = 0; i < (finalTxt.length + half); i++)
+                {
+                    await sleep(10 + (Math.pow(i / 50, 4))/4);
+
+                    if(i < finalTxt.length)
+                    {
+                        if("., '".includes(finalTxt[i]))
+                        {
+                            txt[i] = finalTxt[i];
+                        }
+                        else
+                        {
+                            txt[i] = char[Math.floor(Math.random()*char.length)];
+                        }
+                    }
+
+                    if(i % 4 == 0)
+                    {
+                        for(var j = Math.max(0, (i - half)); j < Math.min(finalTxt.length, i); j++)
+                        {
+                            if(!"., '".includes(finalTxt[j]))
+                            {
+                                txt[j] = char[Math.floor(Math.random()*char.length)];
+                            }
+                        }
+                    }
+
+                    if(i >= half)
+                    {
+                        txt[i - half] = finalTxt[Math.floor(i - half)];
+                        bio.innerHTML = "<span class='done'>" + txt.join("").slice(0, i - half) + "</span>" + txt.join("").slice(i - half);
+                    }
+                    else
+                    {
+                        bio.innerHTML = txt.join("");
+                    }
+                }
+            }
+            
             animateBio();
             animateName();
         </script>
