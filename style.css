@@ -28,6 +28,29 @@ html
     
 }
 
+h3
+{
+    color: var(--green);
+}
+
+a
+{
+    color: var(--magenta);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: var(--orange);
+    text-decoration:none;
+}
+
+a:visited
+{
+    color: var(--magenta);
+    text-decoration:none;
+}
+
 .yellow {color: var(--yellow);}
 .orange {color: var(--orange);}
 .red {color: var(--red);}
@@ -40,7 +63,7 @@ html
 div.grid
 {
     display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2rem;
     max-width: 1400px;
     margin: auto;
@@ -59,13 +82,13 @@ section.sector
 {
     background: var(--base03);
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
 }
 
 #ed
 {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-start: 3;
+    grid-column-end: 5;
 }
 
 #wrk
@@ -78,13 +101,14 @@ section.sector
 #proj
 {
     grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-end: 5;
 }
 
-#pass
+#footer
 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+   background: var(--base03);
+   grid-column-start: 1;
+   grid-column-end: 5;
 }
 
 section.sector ul
@@ -92,8 +116,7 @@ section.sector ul
     margin:0;
 }
 
-
-li
+ul.obj_heading
 {
     list-style-type: none;
 }

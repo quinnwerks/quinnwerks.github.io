@@ -34,9 +34,9 @@
 					My interests lie in the development of large scale software systems.
 					I have a particular interest in software infrastrutcure, operating systems
 					and distributed systems. 
-					<br><br>
-					Outside of my passion for computers, I am an avid ultimate frisbee player 
-					and a dabbler in rock climbing.
+					<br>
+					Outside of computers I am an avid ultimate frisbee player and a dabbler
+					in rock climbing.
                         </section>
                         <section class="sector" id="ed">
                                 <h2 class=cyan>Education</h2>
@@ -69,7 +69,7 @@
                                                 <ul>
                                                         <li>Software Engineering Intern</li>
                                                         <li>May 2019 - Present</li>
-                                                        <li>Develped features on top of a 1 million+ line codebase</li>
+                                                        <li>Develped features on top of a 1 million+ line code base</li>
                                                         <li>Enhanced internal data analytics infrastructure </li>
                                                         <li>To be continued!</li>
                                                 </ul>
@@ -87,7 +87,7 @@
                                 </ul>
                         </section>
                         <section class="sector" id="proj">
-                                <h2 class=cyan>Recent Projects</h2>
+                                <h2 class=cyan>Projects</h2>
                                  <ul class="obj_heading">
                                         <li class="obj_heading">
                                                 <h3>Distributed Key Value Database</h3>
@@ -101,18 +101,21 @@
                                                 <h3>RTL Line Drawer Embedded System</h3>
                                                 <ul>
                                                 
-                                                        <li>Engineered an embedded system from the CPU to the software</li>
-                                                        <li>Designed, tested and integrated a piplined processor</li>
-                                                        <li>Final product could be used to make animations through VGA</li>
+                                                        <li>Did stuff</li>
+                                                        <li>Did stuff</li>
+                                                        <li>Did stuff</li>
                                                 </ul>
                                         </li>
 					I also have more projects on my Github.
                                 </ul>
                         </section>
-                        <section class="sector" id="footer">
-                                <h2 class=yellow>Contact Me</h2>
-				Github &bull; Email &bull; Resume 
-				(These links are dead, website is still under construction :))
+                        <section class="sector" id="pass">
+                                <h2 class=cyan>Contact Me</h2>
+                                <ul>
+					<li>
+
+					</li>
+                                </ul>
                         </section>
                 </div>
         </body>
