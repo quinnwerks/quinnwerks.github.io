@@ -14,106 +14,159 @@
                 <meta http-equiv='X-UA-Compatible' 
                       content='IE=edge'>
                 <title>Quinn Smith</title>
-                <!--External Includes -->
                 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" 
-                      rel="stylesheet"> 
-                <!--Internal File linking-->
+                      rel="stylesheet">
                 <link rel="stylesheet" type="text/css" href="style.css">
-                <script src="hell.js"></script>
+                <noscript>
+                    <style>
+                        section
+                        {
+                            animation-name: none !important;
+                            opacity: 1 !important;
+                        }
+                    </style>
+                 </noscript>
 
         </head>
-        <body onload="binaryFlipAnimation('allpanels')">
-                <div class="grid" id='allpanels'>
-                        <section class="sector" id="bio">
-                                <h1 class=yellow>Quinn Smith</h1>
-                                        <br>
-					Hi,
-					<br>
-					I'm a Computer Engineering student at the University of Toronto, 
-					currently on PEY as a software engineering intern at Intel.
-					My interests lie in the development of large scale software systems.
-					I have a particular interest in software infrastrutcure, operating systems
-					and distributed systems. 
-					<br><br>
-					Outside of my passion for computers, I am an avid ultimate frisbee player 
-					and a dabbler in rock climbing.
-                        </section>
-                        <section class="sector" id="ed">
-                                <h2 class=cyan>Education</h2>
-                                 <ul class="obj_heading">
-                                        <li>
-                                                <h3>University of Toronto</h3>
-                                                <ul>
-                                                        <li>BASc in Computer Engineering.</li>
-                                                        <li>Concentration in hardware &amp; software.</li>
-                                                        <li>Expected to graduate in April 2021.</li>
-                                                        <li>cGPA:3.7</li>
-                                                </ul>
-                                        </li>
-                                        <li>
-                                                <h3>Coursework</h3>
-                                                <ul>
-                                                        <li>Algorithms &amp; Data Structures</li>
-                                                        <li>Distributed Systems</li>
-                                                        <li>Computer Hardware</li>
-                                                        <li>Operating Systems</li>
-                                                </ul>
-                                        </li>
-                                </ul>
-                          </section>
-                        <section class="sector" id="wrk">
-                                <h2 class=cyan>Work Experience</h2>
-                                 <ul class="obj_heading">
-                                        <li>
-                                                <h3>Intel</h3>
-                                                <ul>
-                                                        <li>Software Engineering Intern</li>
-                                                        <li>May 2019 - Present</li>
-                                                        <li>Develped features on top of a 1 million+ line codebase</li>
-                                                        <li>Enhanced internal data analytics infrastructure </li>
-                                                        <li>To be continued!</li>
-                                                </ul>
-                                        </li>
-                                        <li>
-                                                <h3>Galapagos</h3>
-                                                <ul>
-                                                        <li>May 2018 - August 2018</li>
-                                                        <li>Summer researcher under Professor Paul Chow </li>
-                                                        <li>Aided in the development of an FPGA hypervisor</li>
-                                                        <li>Constructed a tool chain to simulate FPGAs over a network</li>
-                                                        <li>Exposed to advanced hardware design flows such as high level synthesis and partial reconfig</li>
-                                                </ul>
-                                        </li>
-                                </ul>
-                        </section>
-                        <section class="sector" id="proj">
-                                <h2 class=cyan>Recent Projects</h2>
-                                 <ul class="obj_heading">
-                                        <li class="obj_heading">
-                                                <h3>Distributed Key Value Database</h3>
-                                                <ul>
-                                                        <li>Developed a distrubuted database similar to hadoop</li>
-                                                        <li>System was able to detect and recover from partial failures </li>
-                                                        <li>Created a publisher subscribe service</li>
-                                                </ul>
-                                        </li>
-                                        <li class="obj_heading">
-                                                <h3>RTL Line Drawer Embedded System</h3>
-                                                <ul>
-                                                
-                                                        <li>Engineered an embedded system from the CPU to the software</li>
-                                                        <li>Designed, tested and integrated a piplined processor</li>
-                                                        <li>Final product could be used to make animations through VGA</li>
-                                                </ul>
-                                        </li>
-					I also have more projects on my Github.
-                                </ul>
-                        </section>
-                        <section class="sector" id="footer">
-                                <h2 class=yellow>Contact Me</h2>
-				Github &bull; Email &bull; Resume 
-				(These links are dead, website is still under construction :))
-                        </section>
+        <body>
+                <header>
+                    <h1 class="yellow" id="name">Quinn Smith</h1>
+                    <p id="bio">I'm a software engineer, currently enrolled at the University of Toronto. I love playing ultimate frisbee and rock climbing. </p>
+                </header>
+                
+                <div id="grid">
+                    <section id="edu">
+                        <h2 class="cyan">Education</h2>
+                        <ul>
+                            <li><a class="blue" href="https://www.utoronto.ca/">University of Toronto</a></li>
+                            <ul>
+                                <li>BASc in Computer Engineering</li>
+                                <li>Graduating in April 2021</li>
+                                <li>Concentration in hardware &amp; software</li>
+                            </ul>
+                            <li><a class="blue" href="https://github.com/quinwerks/repositries">Course work</a></li>
+                            <ul>
+                                <li>Algorithms &amp; Data Structures</li>
+                                <li>Distributed Systems</li>
+                                <li>Computer Hardware</li>
+                                <li>Operating Systems</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                    <section id="work">
+                        <h2 class="cyan">Work Experience</h2>
+                        <ul>
+                            <li><a class="blue" href="https://www.intel.com/content/www/us/en/homepage.html">Intel</a></li>
+                            <ul>
+                                <li>Software Engeneering Intern</li>
+                                <li>May 2019 — May 2020</li>
+                                <li>(currently ongoing)</li>
+                                <li><br></li>
+                            </ul>
+                            <li><a class="blue" href="http://www.eecg.toronto.edu/~pc/">FPGA Cluster Lab</a></li>
+                            <ul>
+                                <li>Research Fellow under Paul Chow</li>
+                                <li>May 2018 — Augest 2018</li>
+                                <li>Developed an on network FPGA simulator</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                    <section id="proj">
+                        <h2 class="cyan">Personal Projects</h2>
+                        <ul>
+                            <li>Distributed Key Value Database</li>
+                            <li>RTL Line Drawer Embedded System</li>
+                        </ul>
+                    </section>
+
+                    <section id="pass">
+                        <h2 class="cyan">Passions</h2>
+                        <ul>
+                            <li>Ultimate Frisbee</li>
+                            <li>Rock Climbing</li>
+                        </ul>
+                    </section>
+
                 </div>
+        
+        <!-- call animations -->
+        <script>
+            function sleep(ms) 
+            {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            async function animateName()
+            {
+                var name = document.getElementById("name");
+                var finalName = name.innerHTML;
+                name.innerHTML = "_";
+                await sleep(100);
+
+                for(var k = 0; k < finalName.length; k++)
+                {
+                    await sleep(10 + (Math.pow(k, 2)/2));
+                    name.innerHTML = finalName.slice(0, k) + "_";
+                }
+
+                await sleep(10+(Math.pow(finalName.length,2)/2));
+                name.innerHTML = finalName;
+            }
+
+            async function animateBio()
+            {
+                var char = "1234567890-=!@#$%&*()[]{}\|qwertyuiopasdfghjklzxcvbnm>?QWERTYUIOPLKJHGFDSAZXCVBNM".split("");
+                var bio = document.getElementById("bio");
+                var finalTxt = bio.innerHTML.split("");
+                var txt = [" "]
+                bio.innerHTML = txt;
+
+                var half = Math.floor(finalTxt.length / 3);
+                await sleep(500);
+
+                for(var i = 0; i < (finalTxt.length + half); i++)
+                {
+                    await sleep(10 + (Math.pow(i / 50, 4))/4);
+
+                    if(i < finalTxt.length)
+                    {
+                        if("., '".includes(finalTxt[i]))
+                        {
+                            txt[i] = finalTxt[i];
+                        }
+                        else
+                        {
+                            txt[i] = char[Math.floor(Math.random()*char.length)];
+                        }
+                    }
+
+                    if(i % 4 == 0)
+                    {
+                        for(var j = Math.max(0, (i - half)); j < Math.min(finalTxt.length, i); j++)
+                        {
+                            if(!"., '".includes(finalTxt[j]))
+                            {
+                                txt[j] = char[Math.floor(Math.random()*char.length)];
+                            }
+                        }
+                    }
+
+                    if(i >= half)
+                    {
+                        txt[i - half] = finalTxt[Math.floor(i - half)];
+                        bio.innerHTML = "<span class='done'>" + txt.join("").slice(0, i - half) + "</span>" + txt.join("").slice(i - half);
+                    }
+                    else
+                    {
+                        bio.innerHTML = txt.join("");
+                    }
+                }
+            }
+            
+            animateBio();
+            animateName();
+        </script>
         </body>
 </html>
