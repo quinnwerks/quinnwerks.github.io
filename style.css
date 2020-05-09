@@ -164,6 +164,11 @@ ul
     list-style: none;
 }
 
+ul.resume-list
+{
+    list-style: square;
+}
+
 @-webkit-keyframes float
 {
     from

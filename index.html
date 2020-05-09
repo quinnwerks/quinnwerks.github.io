@@ -31,7 +31,7 @@
         <body>
                 <header>
                     <h1 class="yellow" id="name">Quinn Smith</h1>
-                    <p id="bio">I'm a software engineer, currently enrolled at the University of Toronto. I love playing ultimate frisbee and rock climbing. </p>
+                    <p id="bio">I'm a software engineer, currently enrolled at the University of Toronto. I love playing ultimate frisbee and rock climbing. I have a strong interest in the design and implmentation of compilers and large scale software systems.</p>
                 </header>
                 
                 <div id="grid">
@@ -61,14 +61,12 @@
                             <ul>
                                 <li>Software Engeneering Intern</li>
                                 <li>May 2019 — May 2020</li>
-                                <li>(currently ongoing)</li>
                                 <li><br></li>
                             </ul>
                             <li><a class="blue" href="http://www.eecg.toronto.edu/~pc/">FPGA Cluster Lab</a></li>
                             <ul>
                                 <li>Research Fellow under Paul Chow</li>
                                 <li>May 2018 — Augest 2018</li>
-                                <li>Developed an on network FPGA simulator</li>
                             </ul>
                         </ul>
                     </section>
@@ -76,8 +74,17 @@
                     <section id="proj">
                         <h2 class="cyan">Personal Projects</h2>
                         <ul>
-                            <li>Distributed Key Value Database</li>
-                            <li>RTL Line Drawer Embedded System</li>
+                            <li><a class="blue" href="https://github.com/quinnwerks/homerow">Homerow</a></li>
+                            <ul class="resume-list">
+                                <li>An esoteric compiler written in C++.</li>
+                                <li>Finished lexer. Currently working on code generation.</li>
+                            </ul>
+                            <li><br></li>
+                            <li><a class="blue" href="https://github.com/quinnwerks/dotfiles">Dotfiles</a></li>
+                            <ul class="resume-list">
+                                <li>A set of configuration files I use across computers!</li>
+                                <li>Most of my window manager config is written in Haskell.</li>
+                            </ul>
                         </ul>
                     </section>
 
@@ -92,81 +99,6 @@
                 </div>
         
         <!-- call animations -->
-        <script>
-            function sleep(ms) 
-            {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-
-            async function animateName()
-            {
-                var name = document.getElementById("name");
-                var finalName = name.innerHTML;
-                name.innerHTML = "_";
-                await sleep(100);
-
-                for(var k = 0; k < finalName.length; k++)
-                {
-                    await sleep(10 + (Math.pow(k, 2)/2));
-                    name.innerHTML = finalName.slice(0, k) + "_";
-                }
-
-                await sleep(10+(Math.pow(finalName.length,2)/2));
-                name.innerHTML = finalName;
-            }
-
-            async function animateBio()
-            {
-                var char = "1234567890-=!@#$%&*()[]{}\|qwertyuiopasdfghjklzxcvbnm>?QWERTYUIOPLKJHGFDSAZXCVBNM".split("");
-                var bio = document.getElementById("bio");
-                var finalTxt = bio.innerHTML.split("");
-                var txt = [" "]
-                bio.innerHTML = txt;
-
-                var half = Math.floor(finalTxt.length / 3);
-                await sleep(500);
-
-                for(var i = 0; i < (finalTxt.length + half); i++)
-                {
-                    await sleep(10 + (Math.pow(i / 50, 4))/4);
-
-                    if(i < finalTxt.length)
-                    {
-                        if("., '".includes(finalTxt[i]))
-                        {
-                            txt[i] = finalTxt[i];
-                        }
-                        else
-                        {
-                            txt[i] = char[Math.floor(Math.random()*char.length)];
-                        }
-                    }
-
-                    if(i % 4 == 0)
-                    {
-                        for(var j = Math.max(0, (i - half)); j < Math.min(finalTxt.length, i); j++)
-                        {
-                            if(!"., '".includes(finalTxt[j]))
-                            {
-                                txt[j] = char[Math.floor(Math.random()*char.length)];
-                            }
-                        }
-                    }
-
-                    if(i >= half)
-                    {
-                        txt[i - half] = finalTxt[Math.floor(i - half)];
-                        bio.innerHTML = "<span class='done'>" + txt.join("").slice(0, i - half) + "</span>" + txt.join("").slice(i - half);
-                    }
-                    else
-                    {
-                        bio.innerHTML = txt.join("");
-                    }
-                }
-            }
-            
-            animateBio();
-            animateName();
-        </script>
+        <script src="hell.js"> </script>
         </body>
 </html>

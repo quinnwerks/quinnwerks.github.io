@@ -37,7 +37,7 @@ async function animateBio()
 
     for(var i = 0; i < (finalTxt.length + half); i++)
     {
-        await sleep(10 + (Math.pow(i / 50, 4))/4);
+        await sleep(10 + (Math.pow(i / 50,  2.75))/4);
 
         if(i < finalTxt.length)
         {
@@ -73,3 +73,6 @@ async function animateBio()
         }
     }
 }
+
+animateBio();
+animateName();
